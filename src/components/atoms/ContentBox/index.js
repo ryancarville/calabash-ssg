@@ -29,7 +29,6 @@ export default function ContentBox({
         return <p>{children}</p>;
       },
       [BLOCKS.UL_LIST]: (node, children) => {
-        console.log(node)
         return node.content.map((el) => (
           <span style={{display: 'flex'}}>
             <FontAwesomeIcon

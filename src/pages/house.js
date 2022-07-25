@@ -7,7 +7,6 @@ import useTheHouse from '../hooks/useTheHouse'
 
 export default function House() {
   const {title, content, images, floorPlans} = useTheHouse();
-  console.log(floorPlans)
   const tmpImages = images.map(imgs => [].concat(imgs.images))
   const allImages = tmpImages.flat(1);
 

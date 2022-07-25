@@ -71,7 +71,6 @@ const useTheIsland = () => {
       }
     }
   `);
-  console.log(allContentfulTheIsland)
   return allContentfulTheIsland.edges[0].node;
 }
 export default useTheIsland;

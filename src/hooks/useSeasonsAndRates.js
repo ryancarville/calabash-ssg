@@ -27,7 +27,6 @@ const useSeasonsAndRates = () => {
       }
     }
   `);
-  console.log(allContentfulSeasonsAndRates.edges[0].node);
   return allContentfulSeasonsAndRates.edges[0].node;
 };
 export default useSeasonsAndRates;

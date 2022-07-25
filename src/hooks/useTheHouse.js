@@ -91,7 +91,6 @@ const useTheHouse = () => {
       }
     }
   `);
-  console.log(allContentfulTheHouse.edges[0].node)
   return allContentfulTheHouse.edges[0].node;
 }
 

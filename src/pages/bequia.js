@@ -9,7 +9,6 @@ import AccordionItem from '../components/atoms/AccordionItem'
 
 export default function Bequia() {
   const {title, contentSections} = useTheIsland();
-  console.log(title, contentSections)
 
   return (
     <PageLayout
