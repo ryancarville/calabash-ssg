@@ -3,6 +3,8 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import React, { useEffect, useState } from 'react'
 import { INLINES } from '@contentful/rich-text-types';
 import Dialog from '../Dialog'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 export default function AccordionItem({title, content}) {
   const [open, setOpen] = useState(false);
@@ -34,11 +36,18 @@ export default function AccordionItem({title, content}) {
       onClick={() => setOpen(!open)}
       onKeyDown={() => setOpen(!open)}
       role={'button'}
-      tabIndex={0}
+      tabIndex={-1}
     >
       {open && (
         <Dialog>
           <div className={currClass}>
+            <span className={styles.closeButtonWrapper}>
+              <FontAwesomeIcon
+                icon={faXmark}
+                size={'xl'}
+                onClick={() => setOpen(!open)}
+              />
+            </span>
             <h3>{title}</h3>
             <span>{renderRichText(content, options)}</span>
           </div>

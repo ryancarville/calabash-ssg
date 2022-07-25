@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
   * {
     font-family: Helvetica, Arial, sans-serif, serif;
     box-sizing: border-box;
+    font-weight: 100;
   }
   body {
     padding: 0;
