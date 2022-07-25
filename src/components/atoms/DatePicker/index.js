@@ -5,7 +5,6 @@ import { DateRangePicker } from "react-dates"
 import useGoogleCalendar from '../../../hooks/useGoogleCalender'
 
 export default function DatePicker({eventType, onChange}) {
-
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [focusedInput, setFocusedInput] = useState(startDate);
@@ -15,25 +14,31 @@ export default function DatePicker({eventType, onChange}) {
   const handleBlockedDates = (e) => {
     const currDate = e._d;
     let isBlocked = false;
-    allEvents.forEach(cal => {
+    allEvents.forEach((cal) => {
       if (cal.childrenCalendarEvent[0].organizer.displayName === eventType) {
         cal.childrenCalendarEvent.find((event) => {
           const blockedStartDate = new Date(event.start.date);
           const blockedEndDate = new Date(event.end.date);
-          isBlocked = currDate >= blockedStartDate && currDate <= blockedEndDate;
+          isBlocked =
+            currDate >= blockedStartDate && currDate <= blockedEndDate;
           return isBlocked;
         });
-      } else { return false; }
-    })
+      } else {
+        return false;
+      }
+    });
     return isBlocked;
-  }
+  };
+
+  // Check if window is defined (so if in the browser or in node.js).
+  const isBrowser = typeof window !== 'undefined';
 
   const getNumOfMonths = () => {
-    if (window.innerWidth < 500) return 1;
+    if (isBrowser && window.innerWidth < 500) return 1;
     return 2;
-  }
+  };
 
-  const handleDatesChange = ({startDate, endDate}) => {
+  const handleDatesChange = ({ startDate, endDate }) => {
     if (endDate) {
       onChange({
         name: 'dates',
@@ -43,7 +48,7 @@ export default function DatePicker({eventType, onChange}) {
         }
       });
     }
-  }
+  };
   return (
     <DateRangePicker
       startDate={startDate} // momentPropTypes.momentObj or null,
@@ -56,7 +61,7 @@ export default function DatePicker({eventType, onChange}) {
       onDatesChange={({ startDate, endDate }) => {
         setStartDate(startDate);
         setEndDate(endDate);
-        handleDatesChange({startDate, endDate})
+        handleDatesChange({ startDate, endDate });
       }} // PropTypes.func.isRequired,
       focusedInput={focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
       onFocusChange={(focusedInput) => setFocusedInput(focusedInput)} // PropTypes.func.isRequired,
