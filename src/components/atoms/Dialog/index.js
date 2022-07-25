@@ -1,4 +1,4 @@
-import * as styles from '../../../styles/dialog.module.css';
+import * as styles from '../../../cssModules/dialog.module.css';
 import React from 'react';
 
 const Dialog = ({ children }) => {

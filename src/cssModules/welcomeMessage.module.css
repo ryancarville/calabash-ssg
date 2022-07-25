@@ -1,0 +1,25 @@
+.boxWrapper {
+  width: 100%;
+  height: auto;
+  padding: 1em;
+  color: grey
+}
+
+.headingStyle {
+  font-size: 2em;
+  text-align: center;
+}
+
+.textStyle {
+  font-size: 1.2em
+}
+
+@media screen and (min-width: 500px) {
+  .boxWrapper {
+    padding: 3em;
+  }
+
+  .headingStyle {
+    text-align: left;
+  }
+}

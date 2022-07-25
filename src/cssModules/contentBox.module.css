@@ -1,0 +1,87 @@
+.boxWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.textWrapper {
+  width: 100%;
+  height: inherit;
+  font-size: 1.1em;
+  line-height: 1.3em;
+  padding: 0 2em 0 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.li {
+  list-style: none;
+}
+.listCheck {
+  margin-right: .5em;
+}
+
+.textWhite {
+  color: white;
+}
+
+.bgWhite {
+  background-color: white;
+}
+
+.linkBorderWhite {
+  border: 1px solid white;
+  color: white;
+}
+
+.linkBorderWhite:hover {
+  color: turquoise;
+  background-color: white;
+  transition-duration: .5s;
+}
+
+.textTurquoise {
+  color: turquoise;
+}
+
+.bgTurquoise {
+  background-color: turquoise;
+}
+
+.linkBorderTurquoise {
+  border: 1px solid turquoise;
+  color: turquoise;
+}
+
+.linkBorderTurquoise:hover {
+  color: white;
+  background-color: turquoise;
+  transition-duration: .5s;
+}
+
+.linkWrapper {
+  text-decoration: none;
+  padding: .6em;
+  font-size: 1em;
+  width: 8em;
+  text-align: center;
+}
+
+@media screen and (min-width: 500px) {
+  .boxWrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .flexRight {
+    flex-direction: row-reverse;
+  }
+}

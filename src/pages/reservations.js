@@ -1,4 +1,4 @@
-import * as styles from '../styles/rates.module.css'
+import * as styles from '../cssModules/rates.module.css'
 import React from 'react'
 import PageLayout from '../components/organism/PageLayout'
 import { months } from '../utils/common'

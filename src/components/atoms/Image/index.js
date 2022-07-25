@@ -1,4 +1,4 @@
-import * as styles from '../../../styles/image.module.css';
+import * as styles from '../../../cssModules/image.module.css';
 import * as React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 

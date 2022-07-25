@@ -1,5 +1,5 @@
-import * as imgStyle from '../styles/image.module.css'
-import * as styles from '../styles/accordionItem.module.css';
+import * as imgStyle from '../cssModules/image.module.css'
+import * as styles from '../cssModules/accordionItem.module.css';
 import React from 'react'
 import ContentBox from '../components/atoms/ContentBox'
 import PageLayout from '../components/organism/PageLayout'

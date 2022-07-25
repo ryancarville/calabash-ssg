@@ -1,4 +1,4 @@
-import * as styles from '../../../styles/textBox.module.css'
+import * as styles from '../../../cssModules/textBox.module.css'
 import React from 'react';
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 

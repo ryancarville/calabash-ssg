@@ -1,4 +1,4 @@
-import * as styles from '../../../styles/accordionItem.module.css'
+import * as styles from '../../../cssModules/accordionItem.module.css'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import React, { useEffect, useState } from 'react'
 import { INLINES } from '@contentful/rich-text-types';
@@ -34,6 +34,7 @@ export default function AccordionItem({title, content}) {
       onClick={() => setOpen(!open)}
       onKeyDown={() => setOpen(!open)}
       role={'button'}
+      tabIndex={0}
     >
       {open && (
         <Dialog>

@@ -1,4 +1,4 @@
-import * as imgStyles from '../styles/image.module.css'
+import * as imgStyles from '../cssModules/image.module.css'
 import React from 'react'
 import ContentBox from '../components/atoms/ContentBox'
 import PageLayout from '../components/organism/PageLayout'

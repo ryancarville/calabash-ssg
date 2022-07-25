@@ -1,4 +1,4 @@
-import * as styles from '../../../styles/reviewCard.module.css'
+import * as styles from '../../../cssModules/reviewCard.module.css'
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStar } from "@fortawesome/free-solid-svg-icons"

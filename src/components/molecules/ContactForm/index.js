@@ -1,5 +1,5 @@
-import * as imgStyles from '../../../styles/image.module.css';
-import * as styles from '../../../styles/contactForm.module.css';
+import * as imgStyles from '../../../cssModules/image.module.css';
+import * as styles from '../../../cssModules/contactForm.module.css';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';

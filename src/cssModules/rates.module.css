@@ -1,0 +1,54 @@
+.ratesDataWrapper {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: lightcyan;
+  padding: 2em;
+}
+.ratesDataWrapper h1, h3 {
+  font-weight: 300;
+  color: gray;
+  margin: 0;
+  margin-top: .5em;
+}
+
+.ratesDataWrapper p {
+  font-weight: 100;
+  color: gray;
+  margin: .3em;
+}
+
+.seasonRatesWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 1em
+}
+.seasonsWrapper {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 2em;
+}
+
+.season {
+  display: flex;
+
+}
+
+.ratesWrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1em;
+}
+
+@media screen and (min-width: 500px) {
+  .seasonRatesWrapper {
+    flex-direction: row;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

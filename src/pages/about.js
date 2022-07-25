@@ -1,6 +1,6 @@
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import React from 'react'
-import * as styles from '../styles/aboutUs.module.css'
+import * as styles from '../cssModules/aboutUs.module.css'
 import Image from '../components/atoms/Image'
 import PageLayout from '../components/organism/PageLayout'
 import useAboutUs from '../hooks/useAboutUs'

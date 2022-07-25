@@ -1,4 +1,4 @@
-import * as styles from '../../../styles/footer.module.css'
+import * as styles from '../../../cssModules/footer.module.css'
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby'

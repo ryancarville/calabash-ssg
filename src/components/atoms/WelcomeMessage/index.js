@@ -1,4 +1,4 @@
-import * as styles from '../../../styles/welcomeMessage.module.css'
+import * as styles from '../../../cssModules/welcomeMessage.module.css'
 import * as React from "react";
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { BLOCKS } from '@contentful/rich-text-types';

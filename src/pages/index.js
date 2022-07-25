@@ -1,4 +1,4 @@
-import * as imgStyles from '../styles/image.module.css'
+import * as imgStyles from '../cssModules/image.module.css'
 import * as React from "react"
 import WelcomeMessage from "../components/atoms/WelcomeMessage"
 import Banner from "../components/molecules/Banner"

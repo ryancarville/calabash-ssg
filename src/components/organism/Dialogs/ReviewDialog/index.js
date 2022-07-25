@@ -1,4 +1,4 @@
-import * as styles from '../../../../styles/reviewDialog.module.css';
+import * as styles from '../../../../cssModules/reviewDialog.module.css';
 import React from 'react';
 import { BLOCKS } from '@contentful/rich-text-types';
 import { renderRichText } from 'gatsby-source-contentful/rich-text';

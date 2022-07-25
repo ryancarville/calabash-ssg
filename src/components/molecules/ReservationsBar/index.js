@@ -1,4 +1,4 @@
-import * as styles from '../../../styles/reservationsBar.module.css';
+import * as styles from '../../../cssModules/reservationsBar.module.css';
 import React, { useState } from 'react';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
