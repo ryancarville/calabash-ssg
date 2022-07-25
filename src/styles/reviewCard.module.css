@@ -1,0 +1,73 @@
+.cardWrapper {
+  width: 100%;
+  height: auto;
+  padding: 1em;
+  border-radius: 1em;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(64, 224, 208, .8);
+  color: grey;
+  flex: 0 0 75%
+}
+
+.photoWrapper {
+  width: 6em;
+  height: 6em;
+  border-radius: 100%;
+  object-fit: cover
+}
+
+.userInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 10em;
+  margin-bottom: 1em;
+}
+
+.flexCenter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center
+}
+
+.flexCenterColumn {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between
+}
+
+.starWrapper {
+  color: gold
+}
+
+.pDefault {
+  margin: 0
+}
+
+.snippetText {
+  font-size: 1.1em;
+  margin-left: 1em;
+  margin-top: 0;
+  font-style: italic;
+  color: white
+}
+
+.buttonWrapper {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: blue;
+}
+
+@media screen and (min-width: 500px) {
+  .cardWrapper {
+    flex: 0 0 30%;
+    flex-direction: row;
+  }
+}

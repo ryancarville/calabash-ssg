@@ -1,0 +1,58 @@
+.iconWrapper {
+  cursor: pointer;
+  z-index: 20;
+}
+
+.menuWrapper {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+  z-index: 10;
+  top: 4.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 3em;
+  right: 0;
+  overflow-x: hidden;
+}
+
+.openMenu {
+  transition: .5s;
+  right: 0em;
+}
+
+.closedMenu {
+  right: -30em;
+  transition: .5s;
+  opacity: 0;
+  display: none;
+}
+
+.navMenuUl {
+  height: 50vh;
+  list-style: none;
+  font-size: 1.5em;
+  font-weight: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1em;
+}
+
+.link {
+  text-decoration: none;
+  color: grey;
+}
+.link:hover {
+  color: turquoise;
+}
+
+@media screen and (min-width: 500px) {
+  .menuWrapper {
+    width: 30em;
+  }
+}

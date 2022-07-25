@@ -1,0 +1,45 @@
+.footerWrapper {
+  width: 100%;
+  height: 25em;
+  bottom: 0;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2em;
+}
+
+.logoWrapper {
+  width: 100%;
+  cursor: pointer
+}
+
+.linksWrapper {
+  display: flex;
+  height: auto;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  line-height: 2em;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.link {
+  text-decoration: none;
+  margin: .5em;
+}
+
+@media screen and (min-width: 500px) {
+  .logoWrapper {
+    width: 50%;
+  }
+  .footerWrapper {
+    display: flex;
+    height: 15em;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
