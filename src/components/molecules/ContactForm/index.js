@@ -1,16 +1,16 @@
-import * as imgStyles from '../../../styles/image.module.css'
+import * as imgStyles from '../../../styles/image.module.css';
+import * as styles from '../../../styles/contactForm.module.css';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import DatePicker from '../../atoms/DatePicker';
-import * as styles from '../../../styles/contactForm.module.css';
 import { PropertyType } from '../../../utils/common';
 import emailjs from '@emailjs/browser';
-import useContact from '../../../hooks/useContact'
-import Image from '../../atoms/Image'
+import useContact from '../../../hooks/useContact';
+import Image from '../../atoms/Image';
 
-export default function ContactForm({showDatePicker, title}) {
-  const {image} = useContact();
+export default function ContactForm({ showDatePicker, title }) {
+  const { image } = useContact();
   const initialState = {
     fullName: '',
     email: '',
@@ -65,7 +65,7 @@ export default function ContactForm({showDatePicker, title}) {
     <div className={styles.formWrapper}>
       <div className={styles.sections}>
         <form onSubmit={(e) => handleSubmit(e)}>
-          {showDatePicker &&
+          {showDatePicker && (
             <div className={styles.flexRow}>
               <select
                 id={'property'}
@@ -100,14 +100,17 @@ export default function ContactForm({showDatePicker, title}) {
                   min={1}
                   max={8}
                   onChange={(e) =>
-                    handleOnChange({ name: e.target.name, value: e.target.value })
+                    handleOnChange({
+                      name: e.target.name,
+                      value: e.target.value
+                    })
                   }
                   required
                 />
                 <label htmlFor={'numOfGuest'}>Guests</label>
               </span>
             </div>
-          }
+          )}
           <div>
             <input
               className={styles.formInputWrapper}
@@ -131,7 +134,7 @@ export default function ContactForm({showDatePicker, title}) {
               required
             />
           </div>
-          {showDatePicker &&
+          {showDatePicker && (
             <span className={styles.flexRow}>
               <span className={styles.checkboxWrapper}>
                 <input
@@ -139,7 +142,10 @@ export default function ContactForm({showDatePicker, title}) {
                   type={'checkbox'}
                   id={'rentDefender'}
                   onChange={(e) =>
-                    handleOnChange({ name: e.target.name, value: e.target.value })
+                    handleOnChange({
+                      name: e.target.name,
+                      value: e.target.value
+                    })
                   }
                   value={formState.defender}
                   name={'defender'}
@@ -149,7 +155,7 @@ export default function ContactForm({showDatePicker, title}) {
                 </label>
               </span>
             </span>
-          }
+          )}
           <textarea
             className={styles.textArea}
             name={'message'}

@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
 import 'react-image-gallery/styles/css/image-gallery.css';
+import React, { useState } from 'react'
 import ImageGallery from 'react-image-gallery';
 import Button from '../../atoms/Button'
+
 export default function Gallery({
   images,
   showNav = false,

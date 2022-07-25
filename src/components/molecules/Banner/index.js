@@ -1,8 +1,8 @@
+import * as styles from '../../../styles/banner.module.css';
 import * as React from "react";
 import { renderRichText } from 'gatsby-source-contentful/rich-text';
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types';
 import SlideShow from "../SlideShow"
-import * as styles from '../../../styles/banner.module.css';
 
 const Banner = (props) => {
   const {text, images} = props;

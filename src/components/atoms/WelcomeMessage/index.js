@@ -1,9 +1,9 @@
-import { renderRichText } from "gatsby-source-contentful/rich-text"
-import * as React from "react";
-import { BLOCKS } from '@contentful/rich-text-types';
 import * as styles from '../../../styles/welcomeMessage.module.css'
-const WelcomeMessage = ({content}) => {
+import * as React from "react";
+import { renderRichText } from "gatsby-source-contentful/rich-text"
+import { BLOCKS } from '@contentful/rich-text-types';
 
+const WelcomeMessage = ({content}) => {
 
   const options = {
     renderNode: {

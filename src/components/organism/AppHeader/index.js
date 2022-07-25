@@ -1,8 +1,8 @@
 import * as React from "react";
-
 import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import NavMenu from "../../molecules/NavMenu"
+
 const AppHeader = () => {
 
   const appHeaderWrapper = {

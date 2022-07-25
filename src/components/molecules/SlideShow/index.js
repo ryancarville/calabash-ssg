@@ -1,8 +1,7 @@
+import 'react-slideshow-image/dist/styles.css';
+import 'react-image-gallery/styles/css/image-gallery.css';
 import React from 'react'
 import { Slide } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css';
-
-import 'react-image-gallery/styles/css/image-gallery.css';
 import Image from '../../atoms/Image'
 
 export default function SlideShow({

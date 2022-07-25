@@ -1,8 +1,8 @@
+import * as styles from '../../../styles/reviewCard.module.css'
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStar } from "@fortawesome/free-solid-svg-icons"
 import ReviewDialog from "../../organism/Dialogs/ReviewDialog"
-import * as styles from '../../../styles/reviewCard.module.css'
 import Dialog from "../Dialog"
 
 const ReviewCard = (props) => {

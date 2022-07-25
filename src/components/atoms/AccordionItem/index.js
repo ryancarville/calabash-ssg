@@ -18,7 +18,6 @@ export default function AccordionItem({title, content}) {
       [INLINES.HYPERLINK]: (node, children) => {
         return (
           <a
-            className={styles.text}
             href={node.data.uri}
             target={'_blank'}
             rel='noreferrer'

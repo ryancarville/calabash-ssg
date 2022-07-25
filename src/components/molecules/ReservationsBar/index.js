@@ -1,9 +1,9 @@
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useState } from 'react'
-import DatePicker from '../../atoms/DatePicker'
-import * as styles from '../../../styles/reservationsBar.module.css'
-import { PropertyType } from '../../../utils/common'
+import * as styles from '../../../styles/reservationsBar.module.css';
+import React, { useState } from 'react';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import DatePicker from '../../atoms/DatePicker';
+import { PropertyType } from '../../../utils/common';
 import emailjs from '@emailjs/browser';
 
 export default function ReservationsBar() {
@@ -19,24 +19,24 @@ export default function ReservationsBar() {
   const [formState, setFormState] = useState(initialState);
 
   const [showMessage, setShowMessage] = useState(false);
-  const [messageSent, setMessageSent] = useState(false)
+  const [messageSent, setMessageSent] = useState(false);
   const [messageError, setMessageError] = useState(null);
 
-  const handleOnChange = ({name, value}) => {
-    setFormState(prevState => {
+  const handleOnChange = ({ name, value }) => {
+    setFormState((prevState) => {
       return {
         ...prevState,
         [name]: value
-      }
-    })
-  }
+      };
+    });
+  };
 
   const handleHelperMsgClose = () => {
     setTimeout(() => {
       setMessageError('');
       setMessageSent(false);
-    }, 5000)
-  }
+    }, 5000);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -58,7 +58,7 @@ export default function ReservationsBar() {
           setMessageSent(error.text);
         }
       );
-  }
+  };
   return (
     <form className={styles.formWrapper} onSubmit={(e) => handleSubmit(e)}>
       <select
@@ -169,7 +169,17 @@ export default function ReservationsBar() {
       )}
       {messageError && (
         <span>
-          <p>{messageError}  Please email us directly at <a href="mailto=calabashvillabequia@gmail.com" target={'_blank'} rel='noopener' >calabashvillabequia@gmail.com</a>.</p>
+          <p>
+            {messageError} Please email us directly at{' '}
+            <a
+              href='mailto=calabashvillabequia@gmail.com'
+              target={'_blank'}
+              rel='noopener'
+            >
+              calabashvillabequia@gmail.com
+            </a>
+            .
+          </p>
         </span>
       )}
     </form>

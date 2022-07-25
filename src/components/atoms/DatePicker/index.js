@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
 import 'react-dates/initialize';
-import { DateRangePicker } from "react-dates"
 import 'react-dates/lib/css/_datepicker.css';
+import React, { useState } from 'react'
+import { DateRangePicker } from "react-dates"
 import useGoogleCalendar from '../../../hooks/useGoogleCalender'
 
 export default function DatePicker({eventType, onChange}) {

@@ -1,7 +1,7 @@
+import * as styles from '../../../styles/reviews.module.css';
 import * as React from "react";
 import useReviews from "../../../hooks/useReviews"
 import ReviewCard from "../../atoms/ReviewCard"
-import * as styles from '../../../styles/reviews.module.css';
 
 const Reviews = () => {
   const allReviews = useReviews();
