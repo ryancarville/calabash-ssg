@@ -18,9 +18,17 @@ export default function ReservationsBar() {
   };
   const [formState, setFormState] = useState(initialState);
 
+  const [sendingMessage, setSendingMessage] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
   const [messageSent, setMessageSent] = useState(false);
   const [messageError, setMessageError] = useState(null);
+
+  const isBrowser = typeof window !== undefined;
+
+  const isSmallScreen = () => {
+    if (isBrowser && window.innerWidth < 500) return true;
+    return false;
+  }
 
   const handleOnChange = ({ name, value }) => {
     setFormState((prevState) => {
@@ -39,7 +47,7 @@ export default function ReservationsBar() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    setSendingMessage(true);
     emailjs
       .send(
         process.env.EMAIL_JS_GMAIL_SERVICE_ID,
@@ -57,7 +65,9 @@ export default function ReservationsBar() {
         (error) => {
           setMessageSent(error.text);
         }
-      );
+      ).finally(() => {
+        setSendingMessage(false);
+      });
   };
   return (
     <form className={styles.formWrapper} onSubmit={(e) => handleSubmit(e)}>
@@ -123,19 +133,6 @@ export default function ReservationsBar() {
           <input
             className={styles.checkboxInput}
             type={'checkbox'}
-            id={'message'}
-            onChange={(e) => setShowMessage(!showMessage)}
-            value={showMessage}
-            name={'message'}
-          />
-          <label htmlFor={'message'} className={styles.checkboxLabel}>
-            I want to add a message
-          </label>
-        </span>
-        <span className={styles.checkboxWrapper}>
-          <input
-            className={styles.checkboxInput}
-            type={'checkbox'}
             id={'rentDefender'}
             onChange={(e) =>
               handleOnChange({ name: e.target.name, value: e.target.value })
@@ -147,11 +144,43 @@ export default function ReservationsBar() {
             I want to rent the Land Rover
           </label>
         </span>
+        <span className={styles.checkboxWrapper}>
+          <input
+            className={styles.checkboxInput}
+            type={'checkbox'}
+            id={'message'}
+            onChange={(e) => setShowMessage(!showMessage)}
+            value={showMessage}
+            name={'message'}
+          />
+          <label htmlFor={'message'} className={styles.checkboxLabel}>
+            Add a message?
+          </label>
+        </span>
       </span>
-      <button className={styles.submitButton} type={'submit'}>
-        <FontAwesomeIcon icon={faPaperPlane} />
+      {!!(isSmallScreen() && showMessage) && (
+        <textarea
+          className={styles.textArea}
+          name={'message'}
+          value={formState.message}
+          placeholder={'Type message...'}
+          onChange={(e) =>
+            handleOnChange({ name: e.target.name, value: e.target.value })
+          }
+        />
+      )}
+      <button
+        className={styles.submitButton}
+        type={'submit'}
+        disabled={sendingMessage}
+      >
+        {sendingMessage ? (
+          'Sending...'
+        ) : (
+          <FontAwesomeIcon icon={faPaperPlane} />
+        )}
       </button>
-      {showMessage && (
+      {!!(!isSmallScreen() && showMessage) && (
         <textarea
           className={styles.textArea}
           name={'message'}

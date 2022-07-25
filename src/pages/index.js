@@ -1,4 +1,5 @@
-import * as imgStyles from '../cssModules/image.module.css'
+import * as styles from '../cssModules/home.module.css'
+import * as imgStyles from '../cssModules/image.module.css';
 import * as React from "react"
 import WelcomeMessage from "../components/atoms/WelcomeMessage"
 import Banner from "../components/molecules/Banner"
@@ -10,11 +11,6 @@ import useHomePage from "../hooks/useHomePage"
 
 const IndexPage = () => {
   const {banner, welcomeMessage, contentBoxes} = useHomePage();
-  const messageWrapper = {
-    display: "flex",
-    alignItems: "center",
-    flexDirection: 'column'
-  }
 
   return (
     <PageLayout
@@ -24,8 +20,8 @@ const IndexPage = () => {
       }}
     >
       <Banner text={banner.bannerText} images={banner.images} />
-      <div style={messageWrapper}>
-        <ReservationsBar />
+      <ReservationsBar />
+      <div className={styles.messageWrapper}>
         <WelcomeMessage content={welcomeMessage.message} />
       </div>
       <Reviews />

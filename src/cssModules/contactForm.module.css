@@ -1,5 +1,6 @@
 .formWrapper {
   width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-start;
@@ -136,6 +137,7 @@
   min-height: 10em;
   margin-bottom: 1em;
   padding: .5em;
+  font-size: 1.2em;
 }
 @media screen and (min-width: 500px) {
   .formWrapper {

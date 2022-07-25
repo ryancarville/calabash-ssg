@@ -22,6 +22,7 @@ export default function ContactForm({ showDatePicker, title }) {
   };
   const [formState, setFormState] = useState(initialState);
 
+  const [sendingMessage, setSendingMessage] = useState(false);
   const [messageSent, setMessageSent] = useState(false);
   const [messageError, setMessageError] = useState(null);
 
@@ -42,7 +43,7 @@ export default function ContactForm({ showDatePicker, title }) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    setSendingMessage(true)
     emailjs
       .send(
         process.env.EMAIL_JS_GMAIL_SERVICE_ID,
@@ -59,7 +60,9 @@ export default function ContactForm({ showDatePicker, title }) {
         (error) => {
           setMessageSent(error.text);
         }
-      );
+      ).finally(() => {
+        setSendingMessage(false)
+      });
   };
   return (
     <div className={styles.formWrapper}>
@@ -165,8 +168,8 @@ export default function ContactForm({ showDatePicker, title }) {
               handleOnChange({ name: e.target.name, value: e.target.value })
             }
           />
-          <button className={styles.submitButton} type={'submit'}>
-            <FontAwesomeIcon icon={faPaperPlane} />
+          <button className={styles.submitButton} type={'submit'} disabled={sendingMessage}>
+            {sendingMessage ? 'Sending...' : <FontAwesomeIcon icon={faPaperPlane} />}
           </button>
         </form>
       </div>
