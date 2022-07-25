@@ -1,7 +1,7 @@
 import * as styles from '../../../styles/accordionItem.module.css'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import React, { useEffect, useState } from 'react'
-import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types';
+import { INLINES } from '@contentful/rich-text-types';
 import Dialog from '../Dialog'
 
 export default function AccordionItem({title, content}) {
@@ -21,7 +21,7 @@ export default function AccordionItem({title, content}) {
             className={styles.text}
             href={node.data.uri}
             target={'_blank'}
-            rel='noopener'
+            rel='noreferrer'
           >
             {children}
           </a>
@@ -30,7 +30,12 @@ export default function AccordionItem({title, content}) {
     }
   };
   return (
-    <div className={styles.accordionItemWrapper} onClick={() => setOpen(!open)}>
+    <div
+      className={styles.accordionItemWrapper}
+      onClick={() => setOpen(!open)}
+      onKeyDown={() => setOpen(!open)}
+      role={'button'}
+    >
       {open && (
         <Dialog>
           <div className={currClass}>

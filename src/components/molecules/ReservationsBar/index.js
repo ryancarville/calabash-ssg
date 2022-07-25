@@ -5,8 +5,6 @@ import DatePicker from '../../atoms/DatePicker'
 import * as styles from '../../../styles/reservationsBar.module.css'
 import { PropertyType } from '../../../utils/common'
 import emailjs from '@emailjs/browser';
-import Dialog from '../../atoms/Dialog'
-import AccordionItem from '../../atoms/AccordionItem'
 
 export default function ReservationsBar() {
   const initialState = {
