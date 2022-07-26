@@ -10,7 +10,7 @@ export default function About() {
   return (
     <PageLayout
       pageData={{
-        title: 'About',
+        title: 'About Us - Tinder and Sun',
         description: 'The story of Calabash Villa and its owners.',
         link: 'https://www.calabashvillabequia.com/about/'
       }}
