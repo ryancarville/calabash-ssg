@@ -14,10 +14,20 @@ export default function Bequia() {
     <PageLayout
       pageData={{
         title: 'Bequia',
-        description: 'The story of Calabash Villa and its owners.'
+        description: 'Information about Bequia, activities and its social scene',
+        link: 'https://www.calabashvillabequia.com/bequia/'
       }}
     >
-      <h1 style={{padding: '1em', textAlign: 'center', fontWeight: 100, color: 'lightgrey'}}>{title}</h1>
+      <h1
+        style={{
+          padding: '1em',
+          textAlign: 'center',
+          fontWeight: 100,
+          color: 'lightgrey'
+        }}
+      >
+        {title}
+      </h1>
       {contentSections.map((sec, i) => {
         return !!sec.image ? (
           <ContentBox
@@ -43,7 +53,6 @@ export default function Bequia() {
             <TextBox title={sec.title} content={sec.content} />
           </>
         );
-
       })}
     </PageLayout>
   );

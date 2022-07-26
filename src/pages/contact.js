@@ -8,10 +8,11 @@ export default function Contact() {
     <PageLayout
       pageData={{
         title: 'Contact Us',
-        description: "Say hi! We are here to help."
+        description: 'Say hi! We are here to help.',
+        link: 'https://www.calabashvillabequia.com/contact/'
       }}
     >
-      <ContactForm showDatePicker={false} title={'Say Hi! 👋 '}/>
+      <ContactForm showDatePicker={false} title={'Say Hi! 👋 '} />
     </PageLayout>
-  )
+  );
 }

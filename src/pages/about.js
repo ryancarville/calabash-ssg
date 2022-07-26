@@ -11,7 +11,8 @@ export default function About() {
     <PageLayout
       pageData={{
         title: 'About',
-        description: 'The story of Calabash Villa and its owners.'
+        description: 'The story of Calabash Villa and its owners.',
+        link: 'https://www.calabashvillabequia.com/about/'
       }}
     >
       <section className={styles.aboutUsWrapper}>

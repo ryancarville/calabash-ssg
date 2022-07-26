@@ -1,6 +1,6 @@
 .reviewsWrapper {
   width: 100%;
-  margin: 0 auto 1em auto;
+  margin: 0 auto 2em auto;
   overflow-x: scroll;
   background-color: transparent;
 }
@@ -9,7 +9,7 @@
   overflow-x: scroll;
   grid-gap: 1em;
   display: flex;
-  padding: 0 1em 0 1em;
+  padding: 0 1.5em 0 1.5em;
   margin-left: auto;
   margin-right: auto;
   justify-content: flex-start

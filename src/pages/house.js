@@ -14,7 +14,8 @@ export default function House() {
     <PageLayout
       pageData={{
         title: 'Calabash Villa - The House',
-        description: 'Calabash Villa - Private Luxury Villa on Bequia, SVG'
+        description: 'Calabash Villa - Private Luxury Villa on Bequia, SVG',
+        link: 'https://www.calabashvillabequia.com/house/'
       }}
     >
       <Gallery
@@ -25,10 +26,7 @@ export default function House() {
         slideDuration={1500}
         slideInterval={5000}
       />
-      <ContentBox
-        title={title}
-        content={content}
-      />
+      <ContentBox title={title} content={content} />
       {floorPlans.map((plan, i) => {
         const isOdd = i % 2 === 0;
         return (

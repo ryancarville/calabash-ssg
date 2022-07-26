@@ -16,7 +16,8 @@ const IndexPage = () => {
     <PageLayout
       pageData={{
         title: 'Calabash Villa Bequia',
-        description: 'Luxury private villa on Bequia, SVG'
+        description: 'Luxury private villa on Bequia, SVG',
+        link: 'https://www.calabashvillabequia.com/'
       }}
     >
       <Banner text={banner.bannerText} images={banner.images} />

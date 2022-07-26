@@ -11,7 +11,8 @@ export default function Defender() {
     <PageLayout
       pageData={{
         title: 'The Defender',
-        description: '1987 Land Rover Defender 90 for rent.'
+        description: '1987 Land Rover Defender 90 for rent.',
+        link: 'https://www.calabashvillabequia.com/defender/'
       }}
     >
       <ContentBox

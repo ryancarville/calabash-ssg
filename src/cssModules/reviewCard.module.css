@@ -9,14 +9,15 @@
   align-items: center;
   background-color: rgba(64, 224, 208, .8);
   color: grey;
-  flex: 0 0 75%
+  flex: 0 0 75%;
 }
 
 .photoWrapper {
   width: 6em;
   height: 6em;
   border-radius: 100%;
-  object-fit: cover
+  object-fit: cover;
+  margin:.2em;
 }
 
 .userInfoWrapper {
@@ -25,13 +26,13 @@
   justify-content: space-between;
   align-items: center;
   height: 10em;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .flexCenter {
   display: inline-flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
 }
 
 .flexCenterColumn {
@@ -43,15 +44,16 @@
 }
 
 .starWrapper {
-  color: gold
+  color: gold;
+  margin: .2em;
 }
 
 .pDefault {
-  margin: 0
+  margin: .2em
 }
 
 .snippetText {
-  font-size: 1.1em;
+  font-size: 1.2em;
   margin-left: 1em;
   margin-top: 0;
   font-style: italic;
@@ -63,6 +65,7 @@
   border: none;
   cursor: pointer;
   color: blue;
+  font-size: 1.1em  ;
 }
 
 @media screen and (min-width: 500px) {

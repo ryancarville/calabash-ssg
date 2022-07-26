@@ -43,7 +43,8 @@ export default function Reservations() {
     <PageLayout
       pageData={{
         title: 'Rates + Reservations',
-        description: 'Find all current availability and rates for the villa.'
+        description: 'Find all current availability and rates for the villa.',
+        link: 'https://www.calabashvillabequia.com/reservations/'
       }}
     >
       <div className={styles.ratesDataWrapper}>
