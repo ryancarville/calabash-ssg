@@ -15,8 +15,9 @@ const IndexPage = () => {
   return (
     <PageLayout
       pageData={{
-        title: 'Calabash Villa Bequia',
-        description: 'Luxury private villa on Bequia, SVG',
+        title: 'Bequia - Luxury Holiday Rental - Calabash Villa',
+        description:
+          'Luxury private 4 bedroom en suite holiday rental villa on Bequia, SVG',
         link: 'https://www.calabashvillabequia.com/'
       }}
     >
@@ -35,7 +36,7 @@ const IndexPage = () => {
             content={box.content}
             image={box.image.gatsbyImageData}
             linkPath={box.linkPath}
-            linkText={"Learn More"}
+            linkText={'Learn More'}
             direction={isOdd ? 'left' : 'right'}
             imgClass={imgStyles.defaultImage}
           />

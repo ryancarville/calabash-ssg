@@ -67,113 +67,138 @@ export default function ContactForm({ showDatePicker, title }) {
   return (
     <div className={styles.formWrapper}>
       <div className={styles.sections}>
-        <form onSubmit={(e) => handleSubmit(e)}>
-          {showDatePicker && (
-            <div className={styles.flexRow}>
-              <select
-                id={'property'}
-                name={'property'}
-                value={formState.property}
-                className={styles.propertySelect}
+        {messageSent ? (
+          messageError ? (
+            <span>
+              <p>
+                {messageError} Please email us directly at{' '}
+                <a
+                  href='mailto=calabashvillabequia@gmail.com'
+                  target={'_blank'}
+                  rel='noopener'
+                >
+                  calabashvillabequia@gmail.com
+                </a>
+                .
+              </p>
+            </span>
+          ) : (
+            <div className={styles.successOverlayWrapper}>
+              {showDatePicker ? <p>Enquiry Sent! We will reply soon.</p> : <p>Message Sent! We will reply soon.</p>}
+            </div>
+          )
+        ) : sendingMessage ? (
+          <div className={styles.successOverlayWrapper}>
+            {showDatePicker ? <p>Sending enquiry...</p> : <p>Sending message...</p>}
+          </div>
+        ) : (
+          <form onSubmit={(e) => handleSubmit(e)}>
+            {showDatePicker && (
+              <div className={styles.flexRow}>
+                <select
+                  id={'property'}
+                  name={'property'}
+                  value={formState.property}
+                  className={styles.propertySelect}
+                  onChange={(e) =>
+                    handleOnChange({ name: e.target.name, value: e.target.value })
+                  }
+                >
+                  <option value={PropertyType.ENTIRE_VILLA}>
+                    {PropertyType.ENTIRE_VILLA}
+                  </option>
+                  <option value={PropertyType.PENTHOUSE}>
+                    {PropertyType.PENTHOUSE}
+                  </option>
+                  <option value={PropertyType.GARDEN_FLAT}>
+                    {PropertyType.GARDEN_FLAT}
+                  </option>
+                </select>
+
+                <DatePicker
+                  eventType={formState.property}
+                  onChange={(e) => handleOnChange(e)}
+                />
+                <span className={styles.guestsWrapper}>
+                  <input
+                    className={styles.numInputWrapper}
+                    name={'numOfGuests'}
+                    value={formState.numOfGuests}
+                    type={'number'}
+                    min={1}
+                    max={8}
+                    onChange={(e) =>
+                      handleOnChange({
+                        name: e.target.name,
+                        value: e.target.value
+                      })
+                    }
+                    required
+                  />
+                  <label htmlFor={'numOfGuest'}>Guests</label>
+                </span>
+              </div>
+            )}
+            <div>
+              <input
+                className={styles.formInputWrapper}
+                name={'fullName'}
+                value={formState.fullName}
+                placeholder={'Full Name'}
                 onChange={(e) =>
                   handleOnChange({ name: e.target.name, value: e.target.value })
                 }
-              >
-                <option value={PropertyType.ENTIRE_VILLA}>
-                  {PropertyType.ENTIRE_VILLA}
-                </option>
-                <option value={PropertyType.PENTHOUSE}>
-                  {PropertyType.PENTHOUSE}
-                </option>
-                <option value={PropertyType.GARDEN_FLAT}>
-                  {PropertyType.GARDEN_FLAT}
-                </option>
-              </select>
-
-              <DatePicker
-                eventType={formState.property}
-                onChange={(e) => handleOnChange(e)}
+                required
               />
-              <span className={styles.guestsWrapper}>
-                <input
-                  className={styles.numInputWrapper}
-                  name={'numOfGuests'}
-                  value={formState.numOfGuests}
-                  type={'number'}
-                  min={1}
-                  max={8}
-                  onChange={(e) =>
-                    handleOnChange({
-                      name: e.target.name,
-                      value: e.target.value
-                    })
-                  }
-                  required
-                />
-                <label htmlFor={'numOfGuest'}>Guests</label>
-              </span>
+              <input
+                className={styles.formInputWrapper}
+                name={'email'}
+                value={formState.email}
+                placeholder={'Email'}
+                type={'email'}
+                onChange={(e) =>
+                  handleOnChange({ name: e.target.name, value: e.target.value })
+                }
+                required
+              />
             </div>
-          )}
-          <div>
-            <input
-              className={styles.formInputWrapper}
-              name={'fullName'}
-              value={formState.fullName}
-              placeholder={'Full Name'}
-              onChange={(e) =>
-                handleOnChange({ name: e.target.name, value: e.target.value })
-              }
-              required
-            />
-            <input
-              className={styles.formInputWrapper}
-              name={'email'}
-              value={formState.email}
-              placeholder={'Email'}
-              type={'email'}
-              onChange={(e) =>
-                handleOnChange({ name: e.target.name, value: e.target.value })
-              }
-              required
-            />
-          </div>
-          {showDatePicker && (
-            <span className={styles.flexRow}>
-              <span className={styles.checkboxWrapper}>
-                <input
-                  className={styles.checkboxInput}
-                  type={'checkbox'}
-                  id={'rentDefender'}
-                  onChange={(e) =>
-                    handleOnChange({
-                      name: e.target.name,
-                      value: e.target.value
-                    })
-                  }
-                  value={formState.defender}
-                  name={'defender'}
-                />
-                <label htmlFor={'defender'} className={styles.checkboxLabel}>
-                  I want to rent the Land Rover
-                </label>
+            {showDatePicker && (
+              <span className={styles.flexRow}>
+                <span className={styles.checkboxWrapper}>
+                  <input
+                    className={styles.checkboxInput}
+                    type={'checkbox'}
+                    id={'rentDefender'}
+                    onChange={(e) =>
+                      handleOnChange({
+                        name: e.target.name,
+                        value: e.target.value
+                      })
+                    }
+                    value={formState.defender}
+                    name={'defender'}
+                  />
+                  <label htmlFor={'defender'} className={styles.checkboxLabel}>
+                    I want to rent the Land Rover
+                  </label>
+                </span>
               </span>
-            </span>
-          )}
-          <textarea
-            className={styles.textArea}
-            name={'message'}
-            value={formState.message}
-            placeholder={'Type message...'}
-            onChange={(e) =>
-              handleOnChange({ name: e.target.name, value: e.target.value })
-            }
-          />
-          <button className={styles.submitButton} type={'submit'} disabled={sendingMessage}>
-            {sendingMessage ? 'Sending...' : <FontAwesomeIcon icon={faPaperPlane} />}
-          </button>
-        </form>
+            )}
+            <textarea
+              className={styles.textArea}
+              name={'message'}
+              value={formState.message}
+              placeholder={'Type message...'}
+              onChange={(e) =>
+                handleOnChange({ name: e.target.name, value: e.target.value })
+              }
+            />
+            <button className={styles.submitButton} type={'submit'} disabled={sendingMessage}>
+              <FontAwesomeIcon icon={faPaperPlane} />
+            </button>
+          </form>
+        )}
       </div>
-
       <div className={styles.imgSection}>
         <h2>{title}</h2>
         <Image
@@ -181,26 +206,6 @@ export default function ContactForm({ showDatePicker, title }) {
           className={imgStyles.lgImage}
         />
       </div>
-      {messageSent && (
-        <span>
-          <p>Enquiry Sent! We will reply soon.</p>
-        </span>
-      )}
-      {messageError && (
-        <span>
-          <p>
-            {messageError} Please email us directly at{' '}
-            <a
-              href='mailto=calabashvillabequia@gmail.com'
-              target={'_blank'}
-              rel='noopener'
-            >
-              calabashvillabequia@gmail.com
-            </a>
-            .
-          </p>
-        </span>
-      )}
     </div>
   );
 }

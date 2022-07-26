@@ -113,11 +113,21 @@
   margin: 1em;
   padding: 1em;
 }
+
+.successOverlayWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  color: white;
+}
 @media screen and (min-width: 500px) {
   .formWrapper {
     width: 90%;
     height: auto;
     align-items: center;
+    justify-content: flex-end;
     border: .2em solid white;
     margin-top: -3em;
     flex-direction: row;
@@ -126,24 +136,25 @@
 
   .propertySelect {
     width: auto;
+    margin: 0 .4em 0 0;
   }
 
   .formInputWrapper {
     width: auto;
-    margin-top: 0;
+    margin: 0 .2em 0 .2em;
   }
 
   .guestsWrapper {
     margin-bottom: 0;
-    margin-top: 1.3em;
+    margin: 1.3em .2em 0 .2em;
   }
 
   .checkboxInputWrapper {
     margin-right: 0;
   }
   .submitButton {
-    width: auto;
-    height: 3em;
+    width: 4em;
+    height: 1.4em;
     margin-top: 0;
   }
 

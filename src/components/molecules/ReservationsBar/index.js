@@ -71,145 +71,140 @@ export default function ReservationsBar() {
   };
   return (
     <form className={styles.formWrapper} onSubmit={(e) => handleSubmit(e)}>
-      <select
-        id={'property'}
-        name={'property'}
-        value={formState.property}
-        className={styles.propertySelect}
-        onChange={(e) =>
-          handleOnChange({ name: e.target.name, value: e.target.value })
-        }
-      >
-        <option value={PropertyType.ENTIRE_VILLA}>
-          {PropertyType.ENTIRE_VILLA}
-        </option>
-        <option value={PropertyType.PENTHOUSE}>{PropertyType.PENTHOUSE}</option>
-        <option value={PropertyType.GARDEN_FLAT}>
-          {PropertyType.GARDEN_FLAT}
-        </option>
-      </select>
-      <DatePicker
-        eventType={formState.property}
-        onChange={(e) => handleOnChange(e)}
-      />
-      <input
-        className={styles.formInputWrapper}
-        name={'fullName'}
-        value={formState.fullName}
-        placeholder={'Full Name'}
-        onChange={(e) =>
-          handleOnChange({ name: e.target.name, value: e.target.value })
-        }
-        required
-      />
-      <input
-        className={styles.formInputWrapper}
-        name={'email'}
-        value={formState.email}
-        placeholder={'Email'}
-        type={'email'}
-        onChange={(e) =>
-          handleOnChange({ name: e.target.name, value: e.target.value })
-        }
-        required
-      />
-      <span className={styles.guestsWrapper}>
-        <input
-          className={styles.numInputWrapper}
-          name={'numOfGuests'}
-          value={formState.numOfGuests}
-          type={'number'}
-          min={1}
-          max={8}
-          onChange={(e) =>
-            handleOnChange({ name: e.target.name, value: e.target.value })
-          }
-          required
-        />
-        <label htmlFor={'numOfGuest'}>Guests</label>
-      </span>
-      <span className={styles.checkboxInputWrapper}>
-        <span className={styles.checkboxWrapper}>
-          <input
-            className={styles.checkboxInput}
-            type={'checkbox'}
-            id={'rentDefender'}
+      {messageSent ? (
+        messageError ? (
+          <span>
+            <p>
+              {messageError} Please email us directly at{' '}
+              <a
+                href='mailto=calabashvillabequia@gmail.com'
+                target={'_blank'}
+                rel='noopener'
+              >
+                calabashvillabequia@gmail.com
+              </a>
+              .
+            </p>
+          </span>
+        ) : (
+          <div className={styles.successOverlayWrapper}>
+            <p>Enquiry Sent! We will reply soon.</p>
+          </div>
+        )
+      ) : sendingMessage ? (
+        <div className={styles.successOverlayWrapper}>
+          <p>Sending enquiry...</p>
+        </div>
+      ) : (
+        <>
+          <select
+            id={'property'}
+            name={'property'}
+            value={formState.property}
+            className={styles.propertySelect}
             onChange={(e) =>
               handleOnChange({ name: e.target.name, value: e.target.value })
             }
-            value={formState.defender}
-            name={'defender'}
+          >
+            <option value={PropertyType.ENTIRE_VILLA}>
+              {PropertyType.ENTIRE_VILLA}
+            </option>
+            <option value={PropertyType.PENTHOUSE}>
+              {PropertyType.PENTHOUSE}
+            </option>
+            <option value={PropertyType.GARDEN_FLAT}>
+              {PropertyType.GARDEN_FLAT}
+            </option>
+          </select>
+          <DatePicker
+            eventType={formState.property}
+            onChange={(e) => handleOnChange(e)}
           />
-          <label htmlFor={'defender'} className={styles.checkboxLabel}>
-            I want to rent the Land Rover
-          </label>
-        </span>
-        <span className={styles.checkboxWrapper}>
           <input
-            className={styles.checkboxInput}
-            type={'checkbox'}
-            id={'message'}
-            onChange={(e) => setShowMessage(!showMessage)}
-            value={showMessage}
-            name={'message'}
+            className={styles.formInputWrapper}
+            name={'fullName'}
+            value={formState.fullName}
+            placeholder={'Full Name'}
+            onChange={(e) =>
+              handleOnChange({ name: e.target.name, value: e.target.value })
+            }
+            required
           />
-          <label htmlFor={'message'} className={styles.checkboxLabel}>
-            Add a message?
-          </label>
-        </span>
-      </span>
-      {!!(isSmallScreen() && showMessage) && (
-        <textarea
-          className={styles.textArea}
-          name={'message'}
-          value={formState.message}
-          placeholder={'Type message...'}
-          onChange={(e) =>
-            handleOnChange({ name: e.target.name, value: e.target.value })
-          }
-        />
-      )}
-      <button
-        className={styles.submitButton}
-        type={'submit'}
-        disabled={sendingMessage}
-      >
-        {sendingMessage ? (
-          'Sending...'
-        ) : (
-          <FontAwesomeIcon icon={faPaperPlane} />
-        )}
-      </button>
-      {!!(!isSmallScreen() && showMessage) && (
-        <textarea
-          className={styles.textArea}
-          name={'message'}
-          value={formState.message}
-          placeholder={'Type message...'}
-          onChange={(e) =>
-            handleOnChange({ name: e.target.name, value: e.target.value })
-          }
-        />
-      )}
-      {messageSent && (
-        <span>
-          <p>Enquiry Sent! We will reply soon.</p>
-        </span>
-      )}
-      {messageError && (
-        <span>
-          <p>
-            {messageError} Please email us directly at{' '}
-            <a
-              href='mailto=calabashvillabequia@gmail.com'
-              target={'_blank'}
-              rel='noopener'
-            >
-              calabashvillabequia@gmail.com
-            </a>
-            .
-          </p>
-        </span>
+          <input
+            className={styles.formInputWrapper}
+            name={'email'}
+            value={formState.email}
+            placeholder={'Email'}
+            type={'email'}
+            onChange={(e) =>
+              handleOnChange({ name: e.target.name, value: e.target.value })
+            }
+            required
+          />
+          <span className={styles.guestsWrapper}>
+            <input
+              className={styles.numInputWrapper}
+              name={'numOfGuests'}
+              value={formState.numOfGuests}
+              type={'number'}
+              min={1}
+              max={8}
+              onChange={(e) =>
+                handleOnChange({ name: e.target.name, value: e.target.value })
+              }
+              required
+            />
+            <label htmlFor={'numOfGuest'}>Guests</label>
+          </span>
+          <span className={styles.checkboxInputWrapper}>
+            <span className={styles.checkboxWrapper}>
+              <input
+                className={styles.checkboxInput}
+                type={'checkbox'}
+                id={'rentDefender'}
+                onChange={(e) =>
+                  handleOnChange({ name: e.target.name, value: e.target.value })
+                }
+                value={formState.defender}
+                name={'defender'}
+              />
+              <label htmlFor={'defender'} className={styles.checkboxLabel}>
+                I want to rent the Land Rover
+              </label>
+            </span>
+            <span className={styles.checkboxWrapper}>
+              <input
+                className={styles.checkboxInput}
+                type={'checkbox'}
+                id={'message'}
+                onChange={(e) => setShowMessage(!showMessage)}
+                value={showMessage}
+                name={'message'}
+              />
+              <label htmlFor={'message'} className={styles.checkboxLabel}>
+                Add a message?
+              </label>
+            </span>
+          </span>
+          {showMessage && (
+            <textarea
+              className={styles.textArea}
+              name={'message'}
+              value={formState.message}
+              placeholder={'Type message...'}
+              onChange={(e) =>
+                handleOnChange({ name: e.target.name, value: e.target.value })
+              }
+            />
+          )}
+          <button
+            className={styles.submitButton}
+            type={'submit'}
+            disabled={sendingMessage}
+          >
+            <FontAwesomeIcon icon={faPaperPlane} />
+          </button>
+        </>
       )}
     </form>
   );

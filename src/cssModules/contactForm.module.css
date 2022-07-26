@@ -139,6 +139,16 @@
   padding: .5em;
   font-size: 1.2em;
 }
+
+.successOverlayWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: white;
+}
+
 @media screen and (min-width: 500px) {
   .formWrapper {
     height: 80vh;
