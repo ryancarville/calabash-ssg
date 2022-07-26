@@ -1,6 +1,5 @@
 .boxWrapper {
   width: 100%;
-  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -9,7 +8,7 @@
 
 .textWrapper {
   width: 100%;
-  height: inherit;
+  height: auto;
   font-size: 1.1em;
   line-height: 1.5em;
   padding: 0 2em 0 2em;
@@ -17,6 +16,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  overflow-y: auto;
 }
 
 .li {
@@ -76,7 +76,6 @@
 @media screen and (min-width: 500px) {
   .boxWrapper {
     width: 100%;
-    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

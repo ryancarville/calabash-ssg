@@ -23,13 +23,6 @@ export default function ReservationsBar() {
   const [messageSent, setMessageSent] = useState(false);
   const [messageError, setMessageError] = useState(null);
 
-  const isBrowser = typeof window !== 'undefined';
-
-  const isSmallScreen = () => {
-    if (isBrowser && window.innerWidth < 500) return true;
-    return false;
-  }
-
   const handleOnChange = ({ name, value }) => {
     setFormState((prevState) => {
       return {

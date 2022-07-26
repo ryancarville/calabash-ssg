@@ -1,0 +1,22 @@
+.slideContainer {
+  width: 100%;
+  height: auto;
+}
+
+.imageGalleryWrapper {
+  height: 50vh;
+}
+
+.buttonStyle {
+  width: 10em;
+  margin-top: 1em;
+  margin-right: 2em;
+  padding: .5em;
+  font-size: 1em;
+  background-color: lightBlue;
+  border: none;
+  border-radius: 1em;
+  color: white;
+  cursor: pointer;
+  float: right
+}

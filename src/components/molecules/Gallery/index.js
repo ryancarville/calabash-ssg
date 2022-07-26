@@ -1,3 +1,4 @@
+import * as styles from '../../../cssModules/imageGallery.module.css'
 import 'react-image-gallery/styles/css/image-gallery.css';
 import React, { useState } from 'react'
 import ImageGallery from 'react-image-gallery';
@@ -19,30 +20,8 @@ export default function Gallery({
   const getButtonText = () =>
     showThumbs ? 'Hide Thumbnails' : 'Show Thumbnails';
 
-  const slideContainer = {
-    width: '100%',
-    height: 'auto',
-    // display: 'flex',
-    // flexDirection: 'column',
-    // justifyContent: 'flex-end',
-    // alignItems: 'flex-start'
-  };
-
-  const buttonStyle = {
-    width: '10em',
-    marginTop: '1em',
-    marginRight: '2em',
-    padding: '.5em',
-    fontSize: '1em',
-    backgroundColor: 'lightBlue',
-    border: 'none',
-    borderRadius: '1em',
-    color: 'white',
-    cursor: 'pointer',
-    float: 'right'
-  }
   return (
-    <div style={slideContainer}>
+    <div className={styles.slideContainer}>
       <ImageGallery
         showBullets={showBullets}
         thumbnailPosition={'bottom'}
@@ -60,7 +39,9 @@ export default function Gallery({
           thumbnail: img.gatsbyImageData.images.fallback.src
         }))}
       />
-      <Button onClick={handleShowThumbs} style={buttonStyle}>{getButtonText()}</Button>
+      <Button onClick={handleShowThumbs} className={styles.buttonStyle}>
+        {getButtonText()}
+      </Button>
     </div>
   );
 }

@@ -23,7 +23,7 @@ export default function House() {
         showNav={true}
         showBullets={true}
         autoPlay={false}
-        slideDuration={1500}
+        slideDuration={500}
         slideInterval={5000}
       />
       <ContentBox title={title} content={content} />
