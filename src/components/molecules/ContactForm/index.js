@@ -46,10 +46,10 @@ export default function ContactForm({ showDatePicker, title }) {
     setSendingMessage(true)
     emailjs
       .send(
-        `${process.env.EMAIL_JS_GMAIL_SERVICE_ID}`,
+        `${process.env.GATSBY_EMAIL_JS_GMAIL_SERVICE_ID}`,
         'template_n2i3dai',
         formState,
-        `${process.env.EMAIL_JS_PUBLIC_KEY}`
+        `${process.env.GATSBY_EMAIL_JS_PUBLIC_KEY}`
       )
       .then(
         (result) => {
