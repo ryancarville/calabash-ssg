@@ -59,6 +59,26 @@ export default function Footer() {
             AirBnb
           </a>
         </li>
+        <li>
+          <a
+            href={'https://www.instagram.com/calabashvillabequia/'}
+            target={'_blank'}
+            rel='noreferrer'
+            className={styles.link}
+          >
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a
+            href={'https://www.facebook.com/calabashbequia/'}
+            target={'_blank'}
+            rel='noreferrer'
+            className={styles.link}
+          >
+            Facebook
+          </a>
+        </li>
       </ul>
     </footer>
   );
