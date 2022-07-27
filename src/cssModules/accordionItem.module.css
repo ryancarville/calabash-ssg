@@ -10,7 +10,7 @@
   cursor: pointer;
   font-weight: 100;
   margin: 0;
-  color: rgb(186, 186, 186);
+  color: rgb(119, 119, 119);
 }
 
 .accordionItemWrapper > h3:hover {
