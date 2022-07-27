@@ -29,11 +29,18 @@ module.exports = {
         orderBy: 'startTime'
       }
     },
-    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-160604417-1'
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.calabashvillabequia.com',
+        sitemap: 'https://www.calabashvillabequia.com/sitemap.xml',
+        policy: [{userAgent: '*', allow: '/'}]
       }
     },
     'gatsby-plugin-image',
