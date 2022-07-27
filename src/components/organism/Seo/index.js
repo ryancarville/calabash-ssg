@@ -11,6 +11,7 @@ const Seo = (props) => {
 
   return (
     <Helmet>
+      <link href="https://use.fontawesome.com/releases/vVERSION/css/svg-with-js.css" rel="stylesheet"></link>
       <title>{title}</title>
       <meta name='description' content={description} />
       <link rel='canonical' href={link} />
@@ -19,10 +20,7 @@ const Seo = (props) => {
       <meta property='og:url' content={link} />
       <meta property='og:description' content={description} />
       <meta property='og:image' content={imageUrl} />
-      
-      <style>
-        {{fontawesome-css}}
-      </style>
+
     </Helmet>
   );
 }
