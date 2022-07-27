@@ -39,8 +39,8 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://www.calabashvillabequia.com',
-        sitemap: 'https://www.calabashvillabequia.com/sitemap.xml',
-        policy: [{userAgent: '*', allow: '/'}]
+        sitemap: 'https://www.calabashbequia.com/sitemap/sitemap-0.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
       }
     },
     'gatsby-plugin-image',
