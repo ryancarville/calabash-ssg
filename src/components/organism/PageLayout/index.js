@@ -20,6 +20,9 @@ const GlobalStyles = createGlobalStyle`
 `;
 const PageLayout = (props) => {
   const {pageData, children} = props;
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <GlobalStyles />
