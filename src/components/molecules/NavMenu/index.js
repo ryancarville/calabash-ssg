@@ -11,6 +11,8 @@ const NavMenu = () => {
 
   const handleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const isBrowser = typeof window !== 'undefined';
+
   useEffect(() => {
     if (isMenuOpen) {
       setMenuClass(styles.openMenu);
@@ -31,12 +33,13 @@ const NavMenu = () => {
           onClick={handleMenu}
         />
       ) : (
-        <FontAwesomeIcon
-          icon={faBars}
-          className={styles.iconWrapper}
-          size={'lg'}
-          onClick={handleMenu}
-        />
+        isBrowser &&
+          <FontAwesomeIcon
+            icon={faBars}
+            className={styles.iconWrapper}
+            size={'lg'}
+            onClick={handleMenu}
+          />
       )}
       <aside className={clsx([styles.menuWrapper, menuClass])}>
         <ul className={styles.navMenuUl}>

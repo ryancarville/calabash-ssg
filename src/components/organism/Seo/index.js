@@ -11,7 +11,6 @@ const Seo = (props) => {
 
   return (
     <Helmet>
-      <link href="https://use.fontawesome.com/releases/vVERSION/css/svg-with-js.css" rel="stylesheet"></link>
       <title>{title}</title>
       <meta name='description' content={description} />
       <link rel='canonical' href={link} />
