@@ -27,14 +27,14 @@ const NavMenu = () => {
         <FontAwesomeIcon
           icon={faXmark}
           className={styles.iconWrapper}
-          size={'xl'}
+          size={'lg'}
           onClick={handleMenu}
         />
       ) : (
         <FontAwesomeIcon
           icon={faBars}
           className={styles.iconWrapper}
-          size={'xl'}
+          size={'lg'}
           onClick={handleMenu}
         />
       )}
