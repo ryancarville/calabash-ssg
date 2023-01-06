@@ -15,7 +15,7 @@
 .photoWrapper {
   width: 6em;
   height: 6em;
-  border-radius: 100%;
+  border-radius: 50%;
   object-fit: cover;
   margin:.2em;
 }
@@ -67,6 +67,7 @@
   color: blue;
   font-size: 1.1em  ;
 }
+
 
 @media screen and (min-width: 500px) {
   .cardWrapper {

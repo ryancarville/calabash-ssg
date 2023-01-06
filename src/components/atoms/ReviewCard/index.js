@@ -6,7 +6,7 @@ import ReviewDialog from "../../organism/Dialogs/ReviewDialog"
 import Dialog from "../Dialog"
 
 const ReviewCard = (props) => {
-  const {review} = props;
+  const {review, totalCount, currentIdx} = props;
   const [openReview, setOpenReview] = useState(false);
 
   // make rating stars
@@ -32,15 +32,19 @@ return (
         <span className={styles.flexCenter}>{makeRating(review.rating)}</span>
         <p className={styles.pDefault}>{review.reviewerName}</p>
         <p className={styles.pDefault}>{review.date}</p>
-      </div>
-      <span className={styles.flexCenterColumn}>
-        <p className={styles.snippetText}>"{review.textSnippet.textSnippet}"</p>
         <button
           className={styles.buttonWrapper}
           onClick={() => setOpenReview(!openReview)}
         >
           Full Review
         </button>
+      </div>
+      <span className={styles.flexCenterColumn}>
+        <p className={styles.snippetText}>"{review.textSnippet.textSnippet}"</p>
+
+        <span>
+          {currentIdx} / {totalCount}
+        </span>
       </span>
     </div>
     {openReview && (

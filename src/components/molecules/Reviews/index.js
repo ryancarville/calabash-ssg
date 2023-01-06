@@ -5,13 +5,18 @@ import ReviewCard from "../../atoms/ReviewCard"
 
 const Reviews = () => {
   const allReviews = useReviews();
-
+  const totalCount = allReviews.length;
 
   return (
     <section className={styles.reviewsWrapper}>
       <div className={styles.reviewsGridContainer}>
         {allReviews.map((r,i) => (
-          <ReviewCard key={`review-${i}`}review={r} />
+          <ReviewCard
+            key={`review-${i}`}
+            review={r}
+            totalCount={totalCount}
+            currentIdx={i+1}
+          />
         ))}
       </div>
     </section>
