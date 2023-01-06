@@ -20,8 +20,11 @@ const GlobalStyles = createGlobalStyle`
 `;
 const PageLayout = (props) => {
   const {pageData, children} = props;
+
+  const isBrowser = typeof window !== 'undefined';
+
   React.useEffect(() => {
-    window.scrollTo(0, 0);
+    if (isBrowser) window.scrollTo(0, 0);
   }, []);
   return (
     <>

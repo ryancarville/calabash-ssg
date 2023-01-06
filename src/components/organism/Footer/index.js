@@ -25,11 +25,6 @@ export default function Footer() {
           </Link>
         </li>
         <li>
-          <Link to={'/defender'} className={styles.link}>
-            Defender
-          </Link>
-        </li>
-        <li>
           <Link to={'/bequia'} className={styles.link}>
             Bequia
           </Link>
