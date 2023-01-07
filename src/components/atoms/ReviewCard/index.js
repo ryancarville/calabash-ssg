@@ -41,7 +41,6 @@ return (
       </div>
       <span className={styles.flexCenterColumn}>
         <p className={styles.snippetText}>"{review.textSnippet.textSnippet}"</p>
-
         <span>
           {currentIdx} / {totalCount}
         </span>

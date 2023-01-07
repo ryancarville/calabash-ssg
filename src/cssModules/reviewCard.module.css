@@ -54,10 +54,10 @@
 
 .snippetText {
   font-size: 1.2em;
-  margin-left: 1em;
-  margin-top: 0;
   font-style: italic;
-  color: white
+  color: white;
+  padding: 0.5em;
+  line-height: 1.2em;
 }
 
 .buttonWrapper {
@@ -74,5 +74,8 @@
   .cardWrapper {
     flex: 0 0 30%;
     flex-direction: row;
+  }
+  .snippetText {
+    margin: auto;
   }
 }

@@ -5,6 +5,7 @@ const useReviews = () => {
     {
       allContentfulReviews {
         nodes {
+          createdAt
           date
           text {
             raw
