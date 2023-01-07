@@ -6,8 +6,6 @@ import ReviewCard from "../../atoms/ReviewCard"
 const Reviews = () => {
   const allReviews = useReviews();
   const totalCount = allReviews.length;
-  console.log(allReviews)
-
   const months = [
     'January',
     'February',
@@ -22,6 +20,7 @@ const Reviews = () => {
     'November',
     'December'
   ];
+  
   const orderedReviews = (a,b) => {
       const aDate = a.date.split(' ');
       const bDate = b.date.split(' ');
