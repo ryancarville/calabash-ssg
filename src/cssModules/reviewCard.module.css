@@ -26,7 +26,7 @@
   justify-content: space-between;
   align-items: center;
   height: 10em;
-  margin-bottom: 2em;
+  margin-bottom: 3em;
 }
 
 .flexCenter {
@@ -65,7 +65,8 @@
   border: none;
   cursor: pointer;
   color: blue;
-  font-size: 1.1em  ;
+  font-size: 1.1em;
+  padding: 0.3em;
 }
 
 
