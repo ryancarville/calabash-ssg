@@ -25,7 +25,7 @@ const PageLayout = (props) => {
 
   React.useEffect(() => {
     if (isBrowser) window.scrollTo(0, 0);
-  }, []);
+  }, [isBrowser]);
   return (
     <>
       <GlobalStyles />

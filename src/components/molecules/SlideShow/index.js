@@ -15,8 +15,8 @@ export default function SlideShow({
   return (
     <div style={slideContainer}>
       <Slide arrows={false}>
-        {images.map((img) => (
-          <Image className='each-slide' imageData={img.gatsbyImageData} />
+        {images.map((img,i) => (
+          <Image className='each-slide' imageData={img.gatsbyImageData} key={`image-${i}`}/>
         ))}
       </Slide>
     </div>
