@@ -74,31 +74,6 @@ const NavMenu = () => {
             </Link>
           </li>
           <li>
-            <Link to={'/reservations'} className={styles.link}>
-              Rates + Reservation
-            </Link>
-          </li>
-          <li>
-            <a
-              href={'https://www.airbnb.com/users/show/326390723'}
-              target={'_blank'}
-              rel='noreferrer'
-              className={styles.link}
-            >
-              AirBnb
-            </a>
-          </li>
-          <li>
-            <a
-              href={'https://www.instagram.com/calabashvillabequia/'}
-              target={'_blank'}
-              rel='noreferrer'
-              className={styles.link}
-            >
-              Instagram
-            </a>
-          </li>
-          <li>
             <a
               href={'https://www.facebook.com/calabashbequia/'}
               target={'_blank'}

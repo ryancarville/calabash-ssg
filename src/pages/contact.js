@@ -12,7 +12,7 @@ export default function Contact() {
         link: 'https://www.calabashvillabequia.com/contact/'
       }}
     >
-      <ContactForm showDatePicker={false} title={'Say Hi! 👋 '} />
+      <ContactForm title={'Say Hi! 👋 '} />
     </PageLayout>
   );
 }

@@ -84,12 +84,12 @@ export default function ContactForm({ showDatePicker, title }) {
             </span>
           ) : (
             <div className={styles.successOverlayWrapper}>
-              {showDatePicker ? <p>Enquiry Sent! We will reply soon.</p> : <p>Message Sent! We will reply soon.</p>}
+              <p>Message Sent! We will reply soon.</p>
             </div>
           )
         ) : sendingMessage ? (
           <div className={styles.successOverlayWrapper}>
-            {showDatePicker ? <p>Sending enquiry...</p> : <p>Sending message...</p>}
+            <p>Sending message...</p>
           </div>
         ) : (
           <form onSubmit={(e) => handleSubmit(e)}>
@@ -162,28 +162,6 @@ export default function ContactForm({ showDatePicker, title }) {
                 required
               />
             </div>
-            {showDatePicker && (
-              <span className={styles.flexRow}>
-                <span className={styles.checkboxWrapper}>
-                  <input
-                    className={styles.checkboxInput}
-                    type={'checkbox'}
-                    id={'rentDefender'}
-                    onChange={(e) =>
-                      handleOnChange({
-                        name: e.target.name,
-                        value: e.target.value
-                      })
-                    }
-                    value={formState.defender}
-                    name={'defender'}
-                  />
-                  <label htmlFor={'defender'} className={styles.checkboxLabel}>
-                    I want to rent the Land Rover
-                  </label>
-                </span>
-              </span>
-            )}
             <textarea
               className={styles.textArea}
               name={'message'}
