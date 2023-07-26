@@ -7,11 +7,15 @@ import clsx from "clsx"
 
 const NavMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isBrowser, setIsBrowser] = useState(false);
   const [menuClass, setMenuClass] = useState(styles.closedMenu);
 
   const handleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  const isBrowser = typeof window !== 'undefined';
+  useEffect(() => {
+    const isBrowser = typeof window !== 'undefined';
+    setIsBrowser(isBrowser);
+  }, []);
 
   useEffect(() => {
     if (isMenuOpen) {
