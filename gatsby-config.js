@@ -14,21 +14,6 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID
       }
     },
-    // {
-    //   resolve: `gatsby-source-google-calendar`,
-    //   options: {
-    //     calendarIds: [
-    //       'ksf3l9damcnm9nt2ia13pv5sa4@group.calendar.google.com',
-    //       '9hmuhj2fb93h4c5gilsiimbukk@group.calendar.google.com',
-    //       'raairncpt4842lncef4hu9ap0o@group.calendar.google.com'
-    //     ],
-    //     // options to retrieve the next 10 upcoming events
-    //     timeMin: new Date().toISOString(),
-    //     maxResults: 1000,
-    //     singleEvents: true,
-    //     orderBy: 'startTime'
-    //   }
-    // },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
