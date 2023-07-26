@@ -1,0 +1,28 @@
+.forSaleBannerWrapper {
+  width: auto;
+  /* rotate: -40deg; */
+  top: 0;
+  font-size: 0.5rem;
+  color: green;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  border-radius: 0.5rem;
+  border: solid 0.1rem blue;
+  
+}
+
+.forSaleBannerWrapper > h2 {
+  margin: 0
+}
+
+@media screen and (min-width: 500px) {
+
+  .forSaleBannerWrapper {
+    /* width: 50rem; */
+    font-size: 1rem;
+  }
+}

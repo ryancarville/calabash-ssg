@@ -2,6 +2,7 @@ import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import NavMenu from "../../molecules/NavMenu"
+import ForSaleBanner from "../../atoms/ForSaleBanner"
 
 const AppHeader = () => {
 
@@ -19,6 +20,15 @@ const AppHeader = () => {
     zIndex: 1000
   };
 
+  const appHeaderSpan = {
+    width: '20rem',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingLeft: 25,
+    backgroundColor: 'white',
+  };
+
   const logoWrapper = {
     width: 150,
     cursor: "pointer"
@@ -26,14 +36,17 @@ const AppHeader = () => {
 
   return (
     <div style={appHeaderWrapper}>
-      <Link to="/">
+      <Link to='/'>
         <StaticImage
           src={'../../../images/calabash_logo_social.jpg'}
           style={logoWrapper}
           alt={'logo'}
         />
       </Link>
-      <NavMenu />
+      <span style={appHeaderSpan}>
+        <ForSaleBanner />
+        <NavMenu />
+      </span>
     </div>
   );
 }

@@ -19,7 +19,7 @@ export default function Gallery({
 
   const getButtonText = () =>
     showThumbs ? 'Hide Thumbnails' : 'Show Thumbnails';
-  
+
   return (
     <div className={styles.slideContainer}>
       <ImageGallery

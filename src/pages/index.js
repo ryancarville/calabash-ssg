@@ -5,7 +5,7 @@ import WelcomeMessage from "../components/atoms/WelcomeMessage"
 import Banner from "../components/molecules/Banner"
 import PageLayout from "../components/organism/PageLayout"
 import Reviews from '../components/molecules/Reviews/index.js'
-import ReservationsBar from "../components/molecules/ReservationsBar"
+// import ReservationsBar from "../components/molecules/ReservationsBar"
 import ContentBox from "../components/atoms/ContentBox"
 import useHomePage from "../hooks/useHomePage"
 
@@ -22,7 +22,7 @@ const IndexPage = () => {
       }}
     >
       <Banner text={banner.bannerText} images={banner.images} />
-      <ReservationsBar />
+      {/* <ReservationsBar /> */}
       <div className={styles.messageWrapper}>
         <WelcomeMessage content={welcomeMessage.message} />
       </div>
